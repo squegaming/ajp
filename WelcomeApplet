@@ -1,14 +1,25 @@
-import java.applet.Applet;
-import java.awt.Graphics;
+package practical;
 
-/*
-<applet code="WelcomeApplet" width=300 height=200>
-</aplet>
-*/
+import javax.swing.*;
+import java.awt.*;
 
-public class WelcomeApplet extends Applet {
+public class WelcomeApplet extends JFrame {
 
-    public void paint(Graphics g) {
-        g.drawString("Welcome in Java", 100, 100);
+    public WelcomeApplet() {
+
+        setTitle("Welcome");
+
+        JLabel l = new JLabel("Welcome in Java");
+        l.setBounds(100,100,200,30);
+
+        add(l);
+
+        setSize(400,300);
+        setLayout(null);
+        setVisible(true);
+    }
+
+    public static void main(String args[]) {
+        new WelcomeApplet();
     }
 }
