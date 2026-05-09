@@ -1,0 +1,62 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class StudentResult extends JFrame implements ActionListener {
+
+    JLabel l1, l2, l3, l4, result;
+    JTextField t1, t2, t3;
+    JButton b;
+
+    StudentResult() {
+
+        l1 = new JLabel("Maths");
+        l1.setBounds(50, 50, 100, 30);
+
+        l2 = new JLabel("Science");
+        l2.setBounds(50, 100, 100, 30);
+
+        l3 = new JLabel("English");
+        l3.setBounds(50, 150, 100, 30);
+
+        t1 = new JTextField();
+        t1.setBounds(150, 50, 100, 30);
+
+        t2 = new JTextField();
+        t2.setBounds(150, 100, 100, 30);
+
+        t3 = new JTextField();
+        t3.setBounds(150, 150, 100, 30);
+
+        b = new JButton("Result");
+        b.setBounds(100, 220, 100, 30);
+
+        result = new JLabel();
+        result.setBounds(50, 270, 300, 30);
+
+        b.addActionListener(this);
+
+        add(l1); add(l2); add(l3);
+        add(t1); add(t2); add(t3);
+        add(b); add(result);
+
+        setSize(400, 400);
+        setLayout(null);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+
+        int m1 = Integer.parseInt(t1.getText());
+        int m2 = Integer.parseInt(t2.getText());
+        int m3 = Integer.parseInt(t3.getText());
+
+        int total = m1 + m2 + m3;
+        double per = total / 3.0;
+
+        result.setText("Total = " + total + " Percentage = " + per);
+    }
+
+    public static void main(String[] args) {
+        new StudentResult();
+    }
+}
